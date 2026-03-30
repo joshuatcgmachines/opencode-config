@@ -41,6 +41,16 @@
         "next-devtools-mcp@latest"
       ]
     },
+    "chrome-devtools": {
+      "enabled": true,
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--no-usage-statistics"
+      ]
+    },
     "mcp_server_mysql_core": {
       "enabled": true,
       "type": "local",
