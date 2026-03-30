@@ -46,6 +46,7 @@
     "@nick-vi/opencode-type-inject",
     "opencode-websearch-cited",
     "@franlol/opencode-md-table-formatter",
-    "@mohak34/opencode-notifier"
+    "@mohak34/opencode-notifier",
+    "@slkiser/opencode-quota"
   ]
 }
