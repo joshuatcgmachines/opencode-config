@@ -58,6 +58,7 @@
     "opencode-websearch-cited",
     "@franlol/opencode-md-table-formatter",
     "@mohak34/opencode-notifier",
-    "@slkiser/opencode-quota"
+    "@slkiser/opencode-quota",
+    "opencode-vibeguard"
   ]
 }
