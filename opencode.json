@@ -51,26 +51,6 @@
         "chrome-devtools-mcp@latest",
         "--no-usage-statistics"
       ]
-    },
-    "mcp_server_mysql_core": {
-      "enabled": true,
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@benborla29/mcp-server-mysql"
-      ],
-      "environment": {
-        "MYSQL_HOST": "{env:MYSQL_HOST}",
-        "MYSQL_PORT": "{env:MYSQL_PORT}",
-        "MYSQL_USER": "{env:MYSQL_USER}",
-        "MYSQL_PASS": "{env:MYSQL_PASS}",
-        "MYSQL_DB": "{env:MYSQL_DB}",
-        "PATH": "{env:NODE_PATH}",
-        "ALLOW_INSERT_OPERATION": "false",
-        "ALLOW_UPDATE_OPERATION": "false",
-        "ALLOW_DELETE_OPERATION": "false"
-      }
     }
   },
   "plugin": [
