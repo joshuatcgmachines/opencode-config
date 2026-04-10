@@ -46,7 +46,11 @@ agent(s) for execution:
 - `@researcher` for documentation/design/article research to support the spec
 - `@frontend-developer` for React/Next.js frontend work
 - `@backend-developer` for Node.js backend work
+- `@database-expert` for Prisma schema changes, migration generation, and rollback SQL (`down.sql`)
 - both when the change crosses frontend/backend boundaries
+`@database-expert` is callable directly by the user (`mode: all`), and should still be used by the architecture spec whenever DB schema/migration work is in scope.
+When the request includes database schema or Prisma migration work, route that portion to `@database-expert` instead of `@backend-developer`.
+Do not approve database confirmation gates on the user’s behalf; surface `@database-expert` confirmation requests directly to the user and wait for user approval before continuing.
 Ask `@researcher` whenever you need to validate framework/library behavior,
 compare implementation approaches, or gather external references before finalizing
 the spec.
