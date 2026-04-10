@@ -29,7 +29,7 @@
         "@upstash/context7-mcp"
       ],
       "environment": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+        "CONTEXT7_API_KEY": "{file:~/.config/opencode/.secrets/context7_api_key}"
       }
     },
     "playwright": {
@@ -59,11 +59,11 @@
         "@benborla29/mcp-server-mysql"
       ],
       "environment": {
-        "MYSQL_HOST": "{env:MYSQL_HOST}",
-        "MYSQL_PORT": "{env:MYSQL_PORT}",
-        "MYSQL_USER": "{env:MYSQL_USER}",
-        "MYSQL_PASS": "{env:MYSQL_PASS}",
-        "MYSQL_DB": "{env:MYSQL_DB}",
+        "MYSQL_HOST": "{file:~/.config/opencode/.secrets/mysql_host}",
+        "MYSQL_PORT": "{file:~/.config/opencode/.secrets/mysql_port}",
+        "MYSQL_USER": "{file:~/.config/opencode/.secrets/mysql_user}",
+        "MYSQL_PASS": "{file:~/.config/opencode/.secrets/mysql_pass}",
+        "MYSQL_DB": "{file:~/.config/opencode/.secrets/mysql_db}",
         "PATH": "/Users/joshuamcnabb/.nvm/versions/node/v20.10.0/bin:/usr/bin:/bin",
         "ALLOW_INSERT_OPERATION": "false",
         "ALLOW_UPDATE_OPERATION": "false",
