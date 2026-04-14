@@ -59,6 +59,8 @@ agent(s) for execution:
 `@database-expert` is callable directly by the user (`mode: all`), and should still be used by the architecture spec whenever DB schema/migration work is in scope.
 When the request includes database schema or Prisma migration work, route that portion to `@database-expert` instead of `@backend-developer`.
 Do not approve database confirmation gates on the user’s behalf; surface `@database-expert` confirmation requests directly to the user and wait for user approval before continuing.
+For reset-style Prisma operations (`prisma migrate reset`, `prisma db reset`, `prisma db push --force-reset`, or equivalent drop/recreate flow), require explicit user request first; otherwise disallow in plan/spec.
+If user explicitly requests reset, require one final user confirmation immediately before execution by implementation agent.
 Ask `@researcher` whenever you need to validate framework/library behavior,
 compare implementation approaches, or gather external references before finalizing
 the spec.
