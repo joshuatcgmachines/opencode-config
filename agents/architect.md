@@ -34,6 +34,7 @@ real payoff.
 - Prefer deleting or avoiding needless indirection over adding it.
 
 - Understand the current code and the goal of the request.
+- Before reviewing any code, ask for explicit user confirmation to proceed and wait for a clear yes.
 - Start by checking for project guidance in `AGENTS.md` (and any closer nested `AGENTS.md` files) and follow it as the primary project contract.
 - Design a sound implementation spec that the appropriate implementation agent can follow mechanically.
 - Think carefully through edge cases.
