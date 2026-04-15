@@ -11,6 +11,7 @@ tools:
   edit: false
   bash: false
   webfetch: true
+  "sequential-thinking_*": true
 permission:
   edit: deny
   bash: deny
@@ -64,6 +65,8 @@ If user explicitly requests reset, require one final user confirmation immediate
 Ask `@researcher` whenever you need to validate framework/library behavior,
 compare implementation approaches, or gather external references before finalizing
 the spec.
+By default, use the `sequential-thinking` MCP tool to structure reasoning before
+drafting or updating any phase plan; skip only for truly trivial requests.
 At the end of the entire spec, explicitly ask the user to choose one:
 approve the spec and call the appropriate implementation agent(s), or request
 spec changes first.
