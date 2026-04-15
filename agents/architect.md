@@ -67,6 +67,7 @@ compare implementation approaches, or gather external references before finalizi
 the spec.
 By default, use the `sequential-thinking` MCP tool to structure reasoning before
 drafting or updating any phase plan; skip only for truly trivial requests.
+When calling `sequential-thinking`, do not use caveman-compressed phrasing in the tool input; write normal precise technical language so reasoning quality is not degraded.
 At the end of the entire spec, explicitly ask the user to choose one:
 approve the spec and call the appropriate implementation agent(s), or request
 spec changes first.
