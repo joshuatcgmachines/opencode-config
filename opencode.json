@@ -48,6 +48,11 @@
         "@modelcontextprotocol/server-sequential-thinking"
       ]
     },
+    "superlocalmemory": {
+      "enabled": true,
+      "type": "local",
+      "command": ["slm", "mcp"]
+    },
     "playwright": {
       "enabled": false,
       "type": "local",
