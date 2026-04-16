@@ -77,8 +77,10 @@ When user asks for a manual QA checklist/manual test plan:
 - In handoff, include:
   - concise summary of requested or recently implemented changes from chat context,
   - user-stated focus/risk areas and target environments,
-  - explicit instruction to validate summary against live git diff (`git status`, `git diff --name-only`, and relevant file diffs) before generating plan.
+  - explicit instruction to validate summary against live git diff (`git status`, `git diff --name-only`, and relevant file diffs) before generating plan,
+  - explicit instruction that final output must be Markdown checklist (`- [ ]`) suitable to show user directly.
 - If summary and diff conflict, instruct planner to prioritize actual diff and call out mismatch.
+- When returning planner results to user, preserve checklist format and show it directly (no rewrite that removes checklist structure).
 
 At the end of the entire spec, explicitly ask the user to choose one:
 approve the spec and call the appropriate implementation agent(s), or request
