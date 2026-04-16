@@ -93,6 +93,9 @@
       }
     }
   },
+  "instructions": [
+    "rules/coding-style.md"
+  ],
   "plugin": [
     "@nick-vi/opencode-type-inject",
     "opencode-websearch-cited",
