@@ -6,3 +6,4 @@ opencode-notifier-state.json
 .env
 .agents
 .secrets
+/.claude/
