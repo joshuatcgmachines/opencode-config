@@ -2,6 +2,7 @@
 description: Research specialist for software implementation context
 mode: subagent
 model: openai/gpt-5.3-codex
+color: "#0EA5E9"
 #model: anthropic/claude-sonnet-4-6
 temperature: 0.15
 reasoningEffort: medium

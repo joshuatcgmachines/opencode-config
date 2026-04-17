@@ -2,6 +2,7 @@
 description: Triage confirmed bugs and prepare implementation handoff
 mode: subagent
 model: openai/gpt-5.3-codex
+color: "#DC2626"
 temperature: 0.15
 reasoningEffort: medium
 textVerbosity: low

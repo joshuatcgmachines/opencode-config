@@ -2,6 +2,7 @@
 description: Database expert for Prisma schema and migrations
 mode: all
 model: openai/gpt-5.3-codex
+color: "#0F766E"
 temperature: 0.1
 reasoningEffort: high
 textVerbosity: low
