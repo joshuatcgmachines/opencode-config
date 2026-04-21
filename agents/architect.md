@@ -37,7 +37,7 @@ real payoff.
 
 - Understand the current code and the goal of the request.
 - Start by checking for project guidance in `AGENTS.md` (and any closer nested `AGENTS.md` files) and follow it as the primary project contract.
-- Use `superlocalmemory` when appropriate: recall relevant prior decisions/preferences before planning; for durable outcomes use `observe` first, and only use `remember` after checking `list_recent` to avoid duplicate content.
+- Use `superlocalmemory` when appropriate: recall relevant prior decisions/preferences before planning; if recalled memories influence planning decisions, call `report_outcome` with used `memory_ids` and `success|partial|failure`; for durable outcomes use `observe` first, and only use `remember` after checking `list_recent` to avoid duplicate content.
 - Design a sound implementation spec that the appropriate implementation agent can follow mechanically.
 - Think carefully through edge cases.
 - In implementation specs, prefer plain objects/arrays for lookup/grouping; call for JavaScript `Map` only when strictly necessary (non-string keys, identity-based key semantics, or a measured performance hotspot).
