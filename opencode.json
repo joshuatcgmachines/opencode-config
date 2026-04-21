@@ -54,6 +54,21 @@
         "--headless"
       ]
     },
+    "manapool-openapi-server": {
+      "enabled": false,
+      "type": "local",
+      "command": ["uvx", "awslabs.openapi-mcp-server@latest"],
+      "environment": {
+        "API_NAME": "ManaPool",
+        "API_BASE_URL": "https://manapool.com/api/v1",
+        "API_SPEC_URL": "https://manapool.com/api/docs/v1/openapi.json",
+        "LOG_LEVEL": "ERROR",
+        "ENABLE_PROMETHEUS": "false",
+        "ENABLE_OPERATION_PROMPTS": "true",
+        "UVICORN_TIMEOUT_GRACEFUL_SHUTDOWN": "5.0",
+        "UVICORN_GRACEFUL_SHUTDOWN": "true"
+      }
+    },
     "next-devtools": {
       "enabled": false,
       "type": "local",
