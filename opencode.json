@@ -94,7 +94,7 @@
     }
   },
   "instructions": [
-    "~/.config/opencode/rules/coding-style.md"
+    "/Users/joshuamcnabb/.config/opencode/rules/coding-style.md"
   ],
   "plugin": [
     "@nick-vi/opencode-type-inject",
