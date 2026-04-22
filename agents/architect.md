@@ -25,8 +25,7 @@ When writing specs for implementation agents, default to the smallest clear
 change. Do not ask for extracting literals into constants unless there is a
 real payoff.
 
-- Keep one-off literals inline (for example: an error message used once, a
-  single label, or a value with only one call site).
+- Keep one-off literals inline (for example: an error message used once, a single label, or a value with only one call site).
 - Introduce constants only when at least one is true:
   - the value is reused in multiple places,
   - it is a stable domain concept with a meaningful name,
