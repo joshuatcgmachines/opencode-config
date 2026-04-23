@@ -65,10 +65,12 @@ agent(s) for execution:
 - `@frontend-developer` for React/Next.js frontend work
 - `@backend-developer` for Node.js backend work
 - `@database-expert` for Prisma schema changes, migration generation, and rollback SQL (`down.sql`)
+- `@database-expert` for all database tasks: Prisma schema changes, migration generation, rollback SQL (`down.sql`), and SQL query authoring/review/debugging
 - `@manual-test-planner` for risk-prioritized manual QA plans based on uncommitted diff
 - both when the change crosses frontend/backend boundaries
 `@database-expert` is callable directly by the user (`mode: all`), and should still be used by the architecture spec whenever DB schema/migration work is in scope.
-When the request includes database schema or Prisma migration work, route that portion to `@database-expert` instead of `@backend-developer`.
+When the request includes any database work (including plain SQL query writing/review, joins, missing-row checks, export reconciliation, or pricing/data checks), route that portion to `@database-expert` instead of `@backend-developer` or doing it yourself.
+Do not provide final SQL query text directly for these tasks; delegate to `@database-expert` and return its result.
 Do not approve database confirmation gates on the user’s behalf; surface `@database-expert` confirmation requests directly to the user and wait for user approval before continuing.
 When user reports a bug (or asks for bug fix), call `@bug-fixer` first to validate diagnosis and recommend owner(s). Present that summary to user and ask for approval before calling any implementation subagent(s).
 For repository-specific bug reports (for example user provides file path, route, component, API, or observed in-app behavior), follow this strict order:

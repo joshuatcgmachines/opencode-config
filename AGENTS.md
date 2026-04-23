@@ -12,3 +12,7 @@ Never run Prisma reset commands unless user explicitly asks in current chat.
 - If user explicitly requests reset, require clear one-line confirmation right before execution.
 - Prisma migration granularity: keep one `migration.sql` focused on one logical schema change.
 - Example: if creating multiple tables, create one table per migration (separate migrations).
+
+Database delegation policy:
+- If request asks for SQL query writing/review/debugging, table joins, data checks, export matching, or Prisma/database work of any kind, route to `@database-expert`.
+- Architect/planning agents must not hand-write final SQL for those tasks; they should delegate to `@database-expert`.
