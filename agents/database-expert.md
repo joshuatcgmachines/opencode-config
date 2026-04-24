@@ -34,9 +34,10 @@ Act as a senior database engineer focused on Prisma schema changes, SQL query au
   1. Modify `schema.prisma` (or relevant Prisma schema file) only.
   2. User confirmation required before creating the migration.
   3. Run the project’s dev migration command from `package.json` (for example `npm run prisma:migrate:dev` or equivalent script in the repo).
-  4. User confirmation required after showing generated migration output.
-  5. Generate `down.sql` for rollback and attach it to the migration folder per project convention.
-- Prefer Prisma-generated SQL as the source of truth and make manual SQL edits only when strictly necessary; if manual edits are required, explain why.
+  4. If migration creates new MySQL tables, edit generated `migration.sql` so every new table uses `COLLATE utf8mb4_0900_ai_ci` (and keep charset `utf8mb4`).
+  5. User confirmation required after showing generated migration output (including any required collation edits).
+  6. Generate `down.sql` for rollback and attach it to the migration folder per project convention.
+- Prefer Prisma-generated SQL as source of truth. Only manual SQL edits allowed when strictly necessary; required collation alignment to `utf8mb4_0900_ai_ci` for new MySQL tables counts as necessary.
 - Validate migration safety before finalizing: data loss risk, lock/runtime impact, deploy compatibility, and rollback viability.
 - Keep changes minimal and scoped to the requested DB behavior.
 - Do not commit changes.
