@@ -33,6 +33,7 @@ React/Next.js guidance:
 - This codebase uses Next.js Pages Router. Do not introduce App Router/server components unless explicitly requested.
 - Use Pages Router patterns already present in the project (`pages/`, API routes, and existing data-fetching style).
 - Keep client components lean; avoid unnecessary `useEffect` for derivable state.
+- Avoid defaulting to `useMemo`/`useCallback`; most cases should use plain values/functions. Add them only for clear need (measured perf issue, expensive recomputation, or required stable references for memoized consumers/effect dependencies).
 - Ensure loading/error/empty states are handled and typed.
 - Preserve accessibility basics (semantic HTML, labels, keyboard/focus behavior).
 - Match existing project conventions for routing, data fetching, styling, and testing.

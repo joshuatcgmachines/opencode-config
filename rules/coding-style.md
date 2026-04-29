@@ -28,6 +28,7 @@ All rules below are defaults and can be overridden by the user on request.
 - Prefer named exports over default exports. Only use `export default` when required by a framework convention (e.g. Next.js page/layout files, dynamic `import()` with named-export limitations).
 - React component props types must be named after their component with a `Props` suffix: e.g. `MyComponentProps` for `MyComponent`.
 - Do not introduce single-use variables by default. Inline expressions/values when used once. Exception: keep variable when it materially improves readability, reduces duplicated logic, clarifies intent, or simplifies debugging.
+- In React code, do not add `useMemo`/`useCallback` by default. Use them only when there is a clear need: measured performance issue, expensive recalculation, or required referential stability for memoized consumers/effect dependencies.
 
 ## TypeScript
 
