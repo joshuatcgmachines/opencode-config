@@ -11,7 +11,6 @@ tools:
   edit: false
   bash: false
   webfetch: false
-  "sequential-thinking_*": true
 permission:
   edit: deny
   bash: deny
@@ -74,9 +73,6 @@ the spec, except repository-specific bug reports which must follow the strict
 bug-triage order above first.
 Do not substitute your own analysis for `@bug-fixer` on codebase bug triage.
 Do not substitute your own web/doc lookup for `@researcher` on external research.
-By default, use the `sequential-thinking` MCP tool to structure reasoning before
-drafting or updating any phase plan; skip only for truly trivial requests.
-When calling `sequential-thinking`, do not use caveman-compressed phrasing in the tool input; write normal precise technical language so reasoning quality is not degraded.
 
 When user asks for a manual QA checklist/manual test plan:
 - Call `@manual-test-planner` directly (no implementation confirmation gate needed).
