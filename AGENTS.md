@@ -7,6 +7,10 @@ Before first response in every new chat and before each subagent task, load and 
 If user says `/caveman lite|full|ultra`, switch level.
 If user says `stop caveman` or `normal mode`, disable caveman for that session.
 
+Build artifact cleanup:
+- After running build/typecheck commands, remove `tsconfig.tsbuildinfo` if generated.
+- Do not leave `tsconfig.tsbuildinfo` as an uncommitted workspace change unless user explicitly asks to keep it.
+
 Never run Prisma reset commands unless user explicitly asks in current chat.
 - Block all reset-like commands by default: `prisma migrate reset`, `prisma db reset`, `prisma db push --force-reset`, or any command that drops/recreates database.
 - If user explicitly requests reset, require clear one-line confirmation right before execution.
