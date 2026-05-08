@@ -1,7 +1,8 @@
 ---
 description: Senior Software Architect
 mode: primary
-model: openai/gpt-5.5
+#model: openai/gpt-5.5
+model: openai/gpt-5.3-codex
 #model: anthropic/claude-sonnet-4-6
 temperature: 0.35
 reasoningEffort: high
