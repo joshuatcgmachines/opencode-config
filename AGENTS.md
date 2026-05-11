@@ -22,6 +22,9 @@ Data structure preference:
 - Use `Map` only when strictly necessary: non-string keys, identity-based key semantics, or a measured performance hotspot.
 - Use `Set` only when strictly necessary: enforcing value uniqueness or identity-based membership checks.
 
+Testing policy:
+- Never write tests. Do not create test files, add test cases, or suggest testing as part of any implementation plan or task.
+
 Database delegation policy:
 - If request asks for SQL query writing/review/debugging, table joins, data checks, export matching, or Prisma/database work of any kind, route to `@database-expert`.
 - Architect/planning agents must not hand-write final SQL for those tasks; they should delegate to `@database-expert`.
