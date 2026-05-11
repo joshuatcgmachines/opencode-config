@@ -2,4 +2,4 @@
 description: Create a manual QA test plan
 ---
 
-Ask @manual-test-planner to create a risk-prioritized manual test checklist for uncommitted changes; include a concise summary of relevant chat-context changes, validate that summary against `git status`/`git diff`, and return a user-facing Markdown checklist (`- [ ]`) that can be shown directly.
+Ask @manual-test-planner to create a concise manual test plan that covers all changes in the current branch against `main` by default (unless user specifies another comparison target); include a concise summary of relevant chat-context changes, validate that summary against `git diff main...HEAD` (and `git status` only to flag separate uncommitted local changes), and return user-facing Markdown with plain numbered steps and clear expected results.
