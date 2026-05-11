@@ -54,6 +54,7 @@ agent(s) for execution:
 - `@database-expert` for Prisma schema changes, migration generation, and rollback SQL (`down.sql`)
 - `@database-expert` for all database tasks: Prisma schema changes, migration generation, rollback SQL (`down.sql`), and SQL query authoring/review/debugging
 - `@manual-test-planner` for risk-prioritized manual QA plans based on uncommitted diff
+- `@devops-engineer` for CI/CD pipeline and deployment workflow implementation tasks
 - both when the change crosses frontend/backend boundaries
 `@database-expert` is callable directly by the user (`mode: all`), and should still be used by the architecture spec whenever DB schema/migration work is in scope.
 When the request includes any database work (including plain SQL query writing/review, joins, missing-row checks, export reconciliation, or pricing/data checks), route that portion to `@database-expert` instead of `@backend-developer` or doing it yourself.
@@ -84,6 +85,10 @@ When user asks for a manual QA checklist/manual test plan:
   - explicit instruction that final output must be Markdown checklist (`- [ ]`) suitable to show user directly.
 - If summary and diff conflict, instruct planner to prioritize actual diff and call out mismatch.
 - When returning planner results to user, preserve checklist format and show it directly (no rewrite that removes checklist structure).
+
+When user asks for CI/CD pipeline/deployment workflow implementation work:
+- Ask for user confirmation before calling `@devops-engineer`.
+- Do not route generic build/lint/typecheck errors here unless request explicitly includes pipeline/deployment files or deployment workflow tasks.
 
 At the end of the entire spec, explicitly ask the user to choose one:
 approve the spec and call the appropriate implementation agent(s), or request
