@@ -17,6 +17,11 @@ Never run Prisma reset commands unless user explicitly asks in current chat.
 - Prisma migration granularity: keep one `migration.sql` focused on one logical schema change.
 - Example: if creating multiple tables, create one table per migration (separate migrations).
 
+Data structure preference:
+- Prefer arrays and array methods (`find`, `some`, `filter`, `map`) over `Map` and `Set` by default.
+- Use `Map` only when strictly necessary: non-string keys, identity-based key semantics, or a measured performance hotspot.
+- Use `Set` only when strictly necessary: enforcing value uniqueness or identity-based membership checks.
+
 Database delegation policy:
 - If request asks for SQL query writing/review/debugging, table joins, data checks, export matching, or Prisma/database work of any kind, route to `@database-expert`.
 - Architect/planning agents must not hand-write final SQL for those tasks; they should delegate to `@database-expert`.
