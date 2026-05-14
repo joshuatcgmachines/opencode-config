@@ -1,7 +1,8 @@
 ---
 description: Backend developer specializing in Node.js + TypeScript
 mode: all
-model: openai/gpt-5.3-codex
+#model: openai/gpt-5.3-codex
+model: anthropic/claude-sonnet-4-6
 color: "#1D4ED8"
 temperature: 0.2
 tools:

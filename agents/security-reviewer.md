@@ -1,7 +1,8 @@
 ---
 description: Security-focused reviewer for uncommitted changes
 mode: subagent
-model: openai/gpt-5.3-codex
+#model: openai/gpt-5.3-codex
+model: anthropic/claude-sonnet-4-6
 color: "#BE185D"
 temperature: 0.05
 reasoningEffort: medium

@@ -1,7 +1,8 @@
 ---
 description: Manual QA planner for validating current branch changes against main
 mode: subagent
-model: openai/gpt-5.3-codex
+#model: openai/gpt-5.3-codex
+model: anthropic/claude-sonnet-4-6
 color: "#65A30D"
 temperature: 0.1
 reasoningEffort: medium

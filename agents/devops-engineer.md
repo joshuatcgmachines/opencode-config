@@ -1,7 +1,8 @@
 ---
 description: DevOps engineer for CI/CD pipelines and deployment workflows
 mode: all
-model: openai/gpt-5.3-codex
+#model: openai/gpt-5.3-codex
+model: anthropic/claude-sonnet-4-6
 color: "#2563EB"
 temperature: 0.15
 reasoningEffort: medium
