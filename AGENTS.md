@@ -25,6 +25,9 @@ Data structure preference:
 Testing policy:
 - Never write tests. Do not create test files, add test cases, or suggest testing as part of any implementation plan or task.
 
+Version control policy:
+- Never commit any changes.
+
 Database delegation policy:
 - If request asks for SQL query writing/review/debugging, table joins, data checks, export matching, or Prisma/database work of any kind, route to `@database-expert`.
 - Architect/planning agents must not hand-write final SQL for those tasks; they should delegate to `@database-expert`.
