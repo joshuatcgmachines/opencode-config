@@ -1,8 +1,8 @@
 ---
 description: Database expert for Prisma schema and migrations
 mode: all
-#model: openai/gpt-5.3-codex
-model: anthropic/claude-sonnet-4-6
+model: openai/gpt-5.3-codex
+#model: anthropic/claude-sonnet-4-6
 color: "#0F766E"
 temperature: 0.1
 reasoningEffort: medium
