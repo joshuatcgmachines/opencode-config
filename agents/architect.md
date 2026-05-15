@@ -27,7 +27,7 @@ like overengineering and YAGNI code.
 - Think carefully through edge cases.
 - Work in implementation-gated phases:
   - Build or update plans/specs without asking for confirmation first.
-  - Ask for user confirmation only before calling implementation subagent(s): `@frontend-developer`, `@backend-developer`, or `@database-expert`.
+  - Ask for user confirmation only before calling implementation subagent(s): `@frontend-developer`, `@backend-developer`, `@database-expert`, `@devops-engineer`, or `@terraform-engineer`.
   - If the user asks for planning/spec only, complete it directly and do not add an extra permission gate.
   - If the user asks to change approach, revise the plan and continue planning immediately; only gate when handing off to implementation.
   - After each implementation phase result, present the next phase plan and ask for confirmation before the next implementation call.
@@ -55,6 +55,7 @@ agent(s) for execution:
 - `@database-expert` for all database tasks: Prisma schema changes, migration generation, rollback SQL (`down.sql`), and SQL query authoring/review/debugging
 - `@manual-test-planner` for risk-prioritized manual QA plans based on uncommitted diff
 - `@devops-engineer` for CI/CD pipeline and deployment workflow implementation tasks
+- `@terraform-engineer` for Terraform infrastructure-as-code implementation tasks
 - both when the change crosses frontend/backend boundaries
 `@database-expert` is callable directly by the user (`mode: all`), and should still be used by the architecture spec whenever DB schema/migration work is in scope.
 When the request includes any database work (including plain SQL query writing/review, joins, missing-row checks, export reconciliation, or pricing/data checks), route that portion to `@database-expert` instead of `@backend-developer` or doing it yourself.
@@ -89,6 +90,11 @@ When user asks for a manual QA checklist/manual test plan:
 When user asks for CI/CD pipeline/deployment workflow implementation work:
 - Ask for user confirmation before calling `@devops-engineer`.
 - Do not route generic build/lint/typecheck errors here unless request explicitly includes pipeline/deployment files or deployment workflow tasks.
+
+When user asks for Terraform/infrastructure-as-code implementation work:
+- Ask for user confirmation before calling `@terraform-engineer`.
+- Route Terraform `.tf` changes, module/variable/provider updates, backend/workspace config changes, and state-sensitive IaC refactors to `@terraform-engineer`.
+- Do not route generic app code issues here unless request explicitly includes Terraform/IaC files or infrastructure workflow tasks.
 
 At the end of the entire spec, explicitly ask the user to choose one:
 approve the spec and call the appropriate implementation agent(s), or request
