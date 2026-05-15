@@ -5,6 +5,7 @@ model: anthropic/claude-sonnet-4-6
 color: "#C2410C"
 temperature: 0.2
 textVerbosity: low
+steps: 20
 tools:
   write: true
   edit: true

@@ -3,6 +3,11 @@
   "autoupdate": true,
   "model": "openai/gpt-5.3-codex",
   "default_agent": "architect",
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 20000
+  },
   "provider": {
     "openai": {
       "options": {

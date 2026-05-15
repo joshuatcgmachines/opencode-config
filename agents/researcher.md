@@ -4,7 +4,7 @@ mode: subagent
 model: openai/gpt-5.3-codex
 color: "#0EA5E9"
 temperature: 0.15
-reasoningEffort: high
+reasoningEffort: medium
 textVerbosity: low
 tools:
   write: false
