@@ -1,8 +1,8 @@
 ---
 description: Review uncommitted changes
 mode: subagent
-#model: openai/gpt-5.3-codex
-model: anthropic/claude-sonnet-4-6
+model: openai/gpt-5.3-codex
+#model: anthropic/claude-sonnet-4-6
 color: "#7C3AED"
 temperature: 0.05
 reasoningEffort: medium
