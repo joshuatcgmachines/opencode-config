@@ -56,7 +56,10 @@
     "manapool-openapi-server": {
       "enabled": false,
       "type": "local",
-      "command": ["uvx", "awslabs.openapi-mcp-server@latest"],
+      "command": [
+        "uvx",
+        "awslabs.openapi-mcp-server@latest"
+      ],
       "environment": {
         "API_NAME": "ManaPool",
         "API_BASE_URL": "https://manapool.com/api/v1",
@@ -108,6 +111,11 @@
     "@mohak34/opencode-notifier",
     "@slkiser/opencode-quota",
     "opencode-vibeguard",
-    "opencode-mem"
+    [
+      "opencode-codebase-index",
+      {
+        "embeddingProvider": "ollama"
+      }
+    ]
   ]
 }
