@@ -1,7 +1,8 @@
 ---
 description: Terraform IaC engineer for infrastructure code changes
 mode: all
-model: anthropic/claude-sonnet-4-6
+#model: anthropic/claude-sonnet-4-6
+model: openai/gpt-5.3-codex
 color: "#7C42BC"
 temperature: 0.15
 reasoningEffort: medium
