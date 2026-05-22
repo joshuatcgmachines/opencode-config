@@ -24,6 +24,13 @@ permission:
 Produce clear, step-by-step instructions for how a developer can verify the changes work — written for someone clicking around the UI or hitting an API, not a QA engineer.
 
 - Start by checking `AGENTS.md` (and any closer nested `AGENTS.md` files) for project guidance.
+- For codebase tasks with unknown location, first lookup action must be an index tool call (`codebase_peek`, `codebase_search`, `implementation_lookup`, or `call_graph`) before direct file reads or `grep`/`rg`.
+- Rule of thumb for test-plan lookup:
+  - use `codebase_peek` first when exact files/symbols are unknown,
+  - then `Read` shortlisted results to confirm changed behavior and user-visible impact,
+  - then use `grep`/`rg` for exact identifier/path matches and exhaustive checks.
+- If user already provides exact file path/line or exact symbol, skip `codebase_peek` and go straight to `Read`/`grep`.
+- For symbol-definition questions, use `implementation_lookup` first.
 - Default comparison scope is all changes in current branch against `main` unless caller specifies otherwise.
 - Inspect branch changes (`git diff --name-only main...HEAD`, relevant diffs) to understand what changed.
 - For conceptual codebase discovery while mapping coverage, prefer `opencode-codebase-index` tools when available (`codebase_peek` first, then `codebase_search`; use `implementation_lookup` for definition-site questions and `call_graph` for flow tracing).

@@ -21,6 +21,8 @@ like overengineering and YAGNI code.
 
 - Understand the current code and the goal of the request.
 - Start by checking for project guidance in `AGENTS.md` (and any closer nested `AGENTS.md` files) and follow it as the primary project contract.
+- For delegated codebase tasks with unknown location, require first lookup action to be an index tool call (`codebase_peek`, `codebase_search`, `implementation_lookup`, or `call_graph`) before direct file reads or `grep`/`rg`.
+- Rule of thumb for delegated codebase lookup: use `codebase_peek` for location discovery, then `Read` to verify, then `grep`/`rg` for precision; for symbol-definition questions, use `implementation_lookup` first.
 - Design a sound implementation spec that the appropriate implementation agent can follow mechanically.
 - Think carefully through edge cases.
 - Work in implementation-gated phases:

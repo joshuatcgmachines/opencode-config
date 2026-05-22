@@ -36,6 +36,13 @@ Codebase indexing workflow (opencode-codebase-index):
 - Before semantic lookup, check `/status` when index readiness is unknown.
 - If index is missing/stale/not ready, run `/index` (incremental) before semantic queries.
 - Do not use `/index force` unless user explicitly requests a full rebuild.
+- Default behavior: for any codebase task where location is not already known, first lookup action must be an index tool call (`codebase_peek`, `codebase_search`, `implementation_lookup`, or `call_graph`) before direct file reads or `grep`/`rg`.
+- Rule of thumb:
+  - use `codebase_peek` first when you do not know exact file/symbol names and need fast location candidates,
+  - then `Read` the top candidate files/chunks to verify behavior before making claims or edits,
+  - then use `grep`/`rg` for exact identifier/path matching and exhaustive occurrence checks.
+- If user already gives exact file path/line or exact symbol, skip `codebase_peek` and go straight to `Read`/`grep`.
+- If `codebase_peek` is low-signal or empty, run `codebase_search` with a more specific behavior query.
 - For conceptual discovery questions, use `codebase_peek` first; use `codebase_search` when code content is needed.
 - For symbol-definition questions, use `implementation_lookup` first.
 - For call-flow tracing, use `call_graph`.
