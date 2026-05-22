@@ -25,6 +25,7 @@ Act as a senior engineer focused on bug triage and safe implementation handoff.
 
 - Start each task by checking for project guidance in `AGENTS.md` (and any closer nested `AGENTS.md` files) and follow it as the primary project contract.
 - For conceptual bug-location discovery, prefer `opencode-codebase-index` tools when available:
+  - check `/status` when index readiness is unknown, and run `/index` if missing/stale/not ready (incremental only; do not use `/index force` unless user explicitly requests full rebuild),
   - `codebase_peek` first for location-first discovery,
   - `codebase_search` when implementation content is needed,
   - `implementation_lookup` for definition-site questions,

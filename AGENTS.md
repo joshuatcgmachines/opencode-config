@@ -33,9 +33,11 @@ Database delegation policy:
 - Architect/planning agents must not hand-write final SQL for those tasks; they should delegate to `@database-expert`.
 
 Codebase indexing workflow (opencode-codebase-index):
-- Assume user handles indexing manually.
+- Before semantic lookup, check `/status` when index readiness is unknown.
+- If index is missing/stale/not ready, run `/index` (incremental) before semantic queries.
+- Do not use `/index force` unless user explicitly requests a full rebuild.
 - For conceptual discovery questions, use `codebase_peek` first; use `codebase_search` when code content is needed.
 - For symbol-definition questions, use `implementation_lookup` first.
 - For call-flow tracing, use `call_graph`.
 - For exact identifiers or exhaustive matches, use `rg`/`grep`.
-- If semantic results look stale or provider/model looks wrong, ask user to run a manual reindex, then verify with `/status`.
+- If semantic results still look stale after `/index`, verify provider/model via `/status` and surface mismatch.

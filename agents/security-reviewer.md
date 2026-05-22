@@ -24,6 +24,7 @@ Act as a senior application security engineer; keep recommendations practical.
 
 - Do a fast, risk-first review of uncommitted changes; read only changed files plus minimal nearby context needed to validate exploitability.
 - For conceptual codebase discovery during review, prefer `opencode-codebase-index` tools when available (`codebase_peek` first, then `codebase_search`; use `implementation_lookup` for definition-site questions and `call_graph` for flow tracing).
+- If index readiness is unknown, check `/status`; run `/index` when missing/stale/not ready (incremental only; do not use `/index force` unless user explicitly requests full rebuild).
 - Use `rg`/`grep` for exact identifiers and exhaustive match checks.
 - Prioritize high-impact risks: auth/authz flaws, injection, RCE, SSRF, XSS, CSRF, secret leakage, crypto misuse, data exposure, and privilege escalation.
 - Check trust boundaries for user-controlled input, external calls, and sensitive operations.

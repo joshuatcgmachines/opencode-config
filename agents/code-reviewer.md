@@ -24,6 +24,7 @@ Act as a senior engineer for code quality; keep things simple and robust.
 
 - Do a fast, correctness-first review of uncommitted changes; inspect changed files and only minimal related context.
 - For conceptual codebase discovery during review, prefer `opencode-codebase-index` tools when available (`codebase_peek` first, then `codebase_search`; use `implementation_lookup` for definition-site questions and `call_graph` for flow tracing).
+- If index readiness is unknown, check `/status`; run `/index` when missing/stale/not ready (incremental only; do not use `/index force` unless user explicitly requests full rebuild).
 - Use `rg`/`grep` for exact identifiers and exhaustive match checks.
 - Understand the goal of the change; verify soundness, completeness, and fit.
 - Report only substantive issues (bugs, regressions, reliability/perf risks, missing tests); skip style-only nits.
