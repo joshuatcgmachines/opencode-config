@@ -26,6 +26,8 @@ Produce clear, step-by-step instructions for how a developer can verify the chan
 - Start by checking `AGENTS.md` (and any closer nested `AGENTS.md` files) for project guidance.
 - Default comparison scope is all changes in current branch against `main` unless caller specifies otherwise.
 - Inspect branch changes (`git diff --name-only main...HEAD`, relevant diffs) to understand what changed.
+- For conceptual codebase discovery while mapping coverage, prefer `opencode-codebase-index` tools when available (`codebase_peek` first, then `codebase_search`; use `implementation_lookup` for definition-site questions and `call_graph` for flow tracing).
+- Use `rg`/`grep` for exact identifiers and exhaustive match checks.
 - If there are uncommitted local changes, mention them separately and do not silently mix them into branch-vs-main coverage.
 - If caller provides a change summary, validate it against the actual diff and note any mismatch.
 - Write plain numbered steps: "Go to X, click Y, expect Z." No QA jargon (no smoke tests, regression suites, test matrices, etc.).

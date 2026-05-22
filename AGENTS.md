@@ -31,3 +31,11 @@ Version control policy:
 Database delegation policy:
 - If request asks for SQL query writing/review/debugging, table joins, data checks, export matching, or Prisma/database work of any kind, route to `@database-expert`.
 - Architect/planning agents must not hand-write final SQL for those tasks; they should delegate to `@database-expert`.
+
+Codebase indexing workflow (opencode-codebase-index):
+- Assume user handles indexing manually.
+- For conceptual discovery questions, use `codebase_peek` first; use `codebase_search` when code content is needed.
+- For symbol-definition questions, use `implementation_lookup` first.
+- For call-flow tracing, use `call_graph`.
+- For exact identifiers or exhaustive matches, use `rg`/`grep`.
+- If semantic results look stale or provider/model looks wrong, ask user to run a manual reindex, then verify with `/status`.
