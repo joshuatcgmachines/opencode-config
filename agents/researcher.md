@@ -1,10 +1,10 @@
 ---
 description: Research specialist for software implementation context
 mode: subagent
-model: openai/gpt-5.3-codex
+model: openai/gpt-5.4-mini
 color: "#0EA5E9"
 temperature: 0.15
-reasoningEffort: medium
+reasoningEffort: high
 textVerbosity: low
 tools:
   write: false
