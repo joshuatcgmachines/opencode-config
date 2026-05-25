@@ -21,6 +21,9 @@ Data structure preference:
 - Prefer arrays and array methods (`find`, `some`, `filter`, `map`) over `Map` and `Set` by default.
 - Use `Map` only when strictly necessary: non-string keys, identity-based key semantics, or a measured performance hotspot.
 - Use `Set` only when strictly necessary: enforcing value uniqueness or identity-based membership checks.
+- Prefer readable single-pass array transforms when possible.
+- Avoid nested iterator chains like `map` inside `map`/`flatMap` when an equally readable single-pass alternative exists.
+- Readability is default priority. If performance-oriented rewrite harms readability, keep clearer code unless user explicitly requests performance-first.
 
 Testing policy:
 - Never write tests. Do not create test files, add test cases, or suggest testing as part of any implementation plan or task.
