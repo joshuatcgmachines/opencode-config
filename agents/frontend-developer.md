@@ -6,7 +6,6 @@ model: openai/gpt-5.3-codex
 color: "#C2410C"
 temperature: 0.2
 textVerbosity: low
-steps: 20
 tools:
   write: true
   edit: true
