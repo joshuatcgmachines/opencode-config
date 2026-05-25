@@ -35,4 +35,6 @@ All rules below are defaults and can be overridden by the user on request.
 ## TypeScript
 
 - Prefer narrow, explicit types over `any`; use `unknown` with narrowing for untrusted or runtime-boundary inputs.
+- Prefer `interface` over `type` for object shapes when both are equally clear and suitable.
+- Use `type` when it is strictly better fit: unions, intersections, mapped/conditional/utility compositions, tuples, primitives, or function signatures that benefit from aliasing.
 - Do not use `as const` unless absolutely necessary. Only use it when downstream types explicitly require exact literal inference or readonly tuple/object semantics that cannot be expressed cleanly another way.
