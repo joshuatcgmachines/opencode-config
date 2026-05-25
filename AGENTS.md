@@ -35,6 +35,11 @@ Database delegation policy:
 - If request asks for SQL query writing/review/debugging, table joins, data checks, export matching, or Prisma/database work of any kind, route to `@database-expert`.
 - Architect/planning agents must not hand-write final SQL for those tasks; they should delegate to `@database-expert`.
 
+Prisma filtering preference:
+- Prefer filtering in Prisma queries over JavaScript post-filtering when both are viable.
+- Do not introduce raw SQL queries solely to move filtering from JavaScript into the database layer.
+- User interacting with the agent can override this in current chat when a raw query is necessary.
+
 Codebase indexing workflow (opencode-codebase-index):
 - Before semantic lookup, check `/status` when index readiness is unknown.
 - If index is missing/stale/not ready, run `/index` (incremental) before semantic queries.

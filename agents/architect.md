@@ -51,6 +51,8 @@ agent(s) for execution:
 - both when the change crosses frontend/backend boundaries
 `@database-expert` is callable directly by the user (`mode: all`), and should still be used by the architecture spec whenever DB schema/migration work is in scope.
 When the request includes any database work (including plain SQL query writing/review, joins, missing-row checks, export reconciliation, or pricing/data checks), route that portion to `@database-expert` instead of `@backend-developer` or doing it yourself.
+When defining implementation specs that involve Prisma-backed reads, prefer query-level filtering over JavaScript post-filtering when both are viable, and avoid proposing raw SQL solely for filtering.
+User interacting with this agent can override this in current chat when a raw query is necessary; architect should reflect that override in the spec and delegation notes.
 Do not provide final SQL query text directly for these tasks; delegate to `@database-expert` and return its result.
 Do not approve database confirmation gates on the user’s behalf; surface `@database-expert` confirmation requests directly to the user and wait for user approval before continuing.
 For repository-specific bug reports (for example user provides file path, route, component, API, or observed in-app behavior), follow this strict order:
